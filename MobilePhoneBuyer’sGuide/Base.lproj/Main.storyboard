@@ -18,41 +18,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wIu-UN-6Kb">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wIu-UN-6Kb">
                                 <rect key="frame" x="0.0" y="88" width="414" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="All"/>
                                     <segment title="Favourite"/>
                                 </segments>
-                            </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4uT-s4-Gyk">
-                                <rect key="frame" x="20" y="124" width="374" height="738"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="126" id="3iq-Fn-I0m">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="126"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3iq-Fn-I0m" id="Z6X-hA-Ad4">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="125.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="hqb-u7-8Iv"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="5qS-sq-epW"/>
+                                    <action selector="indexchange:" destination="BYZ-38-t0r" eventType="valueChanged" id="HfU-iF-kVl"/>
                                 </connections>
-                            </tableView>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGY-EA-Ecw" userLabel="AllView">
+                                <rect key="frame" x="0.0" y="116" width="414" height="746"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4uT-s4-Gyk">
+                                        <rect key="frame" x="20" y="4" width="374" height="738"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="126" id="3iq-Fn-I0m">
+                                                <rect key="frame" x="0.0" y="28" width="374" height="126"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3iq-Fn-I0m" id="Z6X-hA-Ad4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="125.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="hqb-u7-8Iv"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="5qS-sq-epW"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="4uT-s4-Gyk" firstAttribute="leading" secondItem="tGY-EA-Ecw" secondAttribute="leading" constant="20" id="2p8-rz-hOL"/>
+                                    <constraint firstItem="4uT-s4-Gyk" firstAttribute="top" secondItem="tGY-EA-Ecw" secondAttribute="top" constant="4" id="XdB-rU-Rcx"/>
+                                    <constraint firstAttribute="bottom" secondItem="4uT-s4-Gyk" secondAttribute="bottom" constant="4" id="brO-tA-2TU"/>
+                                    <constraint firstAttribute="trailing" secondItem="4uT-s4-Gyk" secondAttribute="trailing" constant="20" id="xuO-gI-Hlz"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QSf-Vr-KMh" userLabel="FavouriteView">
+                                <rect key="frame" x="0.0" y="116" width="414" height="746"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tGY-EA-Ecw" secondAttribute="trailing" id="AIy-b0-KCJ"/>
+                            <constraint firstItem="tGY-EA-Ecw" firstAttribute="top" secondItem="wIu-UN-6Kb" secondAttribute="bottom" id="APR-RN-Vpe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QSf-Vr-KMh" secondAttribute="trailing" id="GDc-rb-mqu"/>
+                            <constraint firstItem="tGY-EA-Ecw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gma-W0-yPP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QSf-Vr-KMh" secondAttribute="bottom" id="Mkv-kc-BPU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tGY-EA-Ecw" secondAttribute="bottom" id="SCz-zP-af1"/>
+                            <constraint firstItem="wIu-UN-6Kb" firstAttribute="leading" secondItem="tGY-EA-Ecw" secondAttribute="leading" id="a7M-1i-R0G"/>
+                            <constraint firstItem="QSf-Vr-KMh" firstAttribute="top" secondItem="wIu-UN-6Kb" secondAttribute="bottom" id="aoZ-PF-tTu"/>
+                            <constraint firstItem="QSf-Vr-KMh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fBI-kY-3LQ"/>
+                            <constraint firstItem="wIu-UN-6Kb" firstAttribute="trailing" secondItem="tGY-EA-Ecw" secondAttribute="trailing" id="osR-sx-5xa"/>
+                            <constraint firstItem="wIu-UN-6Kb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="q9E-TT-afL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Qn2-DL-Sbd">
                         <barButtonItem key="rightBarButtonItem" title="Sort" id="fGL-QK-6fL"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="allView" destination="tGY-EA-Ecw" id="ezD-WB-TtE"/>
+                        <outlet property="favouriteView" destination="QSf-Vr-KMh" id="8QU-hT-Luy"/>
+                        <outlet property="segmentedControl" destination="wIu-UN-6Kb" id="XQZ-Fp-7SH"/>
                         <outlet property="tableview" destination="4uT-s4-Gyk" id="GTP-rP-5Oz"/>
                     </connections>
                 </viewController>

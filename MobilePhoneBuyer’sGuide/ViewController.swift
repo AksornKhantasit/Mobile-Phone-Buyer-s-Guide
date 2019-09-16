@@ -10,15 +10,34 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var allView: UIView!
+    @IBOutlet weak var favouriteView: UIView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableview: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         let bundle = Bundle(for: TableViewCell.self)
         let nib = UINib(nibName: "TableViewCell", bundle: bundle)
         tableview.register(nib, forCellReuseIdentifier: "TableViewCell")
     }
+    
+    @IBAction func indexchange(_ sender: Any) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            allView.isHidden = false
+            favouriteView.isHidden = true
+        case 1:
+            print("fai")
+            allView.isHidden = true
+            favouriteView.isHidden = false
+        default:
+            break;
+        }
+        
+    }
+    
 }
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
