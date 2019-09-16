@@ -9,12 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var tableview: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let bundle = Bundle(for: TableViewCell.self)
+        let nib = UINib(nibName: "TableViewCell", bundle: bundle)
+        tableview.register(nib, forCellReuseIdentifier: "TableViewCell")
     }
-
-
+}
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell else {
+                return UITableViewCell()
+        }
+        return cell
+    }
+        
 }
 

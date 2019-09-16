@@ -14,6 +14,8 @@
 		051272DD232F8D0400DC2EC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 051272DB232F8D0400DC2EC3 /* LaunchScreen.storyboard */; };
 		051272E8232F8D0400DC2EC3 /* MobilePhoneBuyer_sGuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051272E7232F8D0400DC2EC3 /* MobilePhoneBuyer_sGuideTests.swift */; };
 		051272F3232F8D0500DC2EC3 /* MobilePhoneBuyer_sGuideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051272F2232F8D0500DC2EC3 /* MobilePhoneBuyer_sGuideUITests.swift */; };
+		05127306232F962A00DC2EC3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05127304232F962A00DC2EC3 /* TableViewCell.swift */; };
+		05127307232F962A00DC2EC3 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05127305232F962A00DC2EC3 /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		051272EE232F8D0500DC2EC3 /* MobilePhoneBuyer’sGuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MobilePhoneBuyer’sGuideUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		051272F2232F8D0500DC2EC3 /* MobilePhoneBuyer_sGuideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilePhoneBuyer_sGuideUITests.swift; sourceTree = "<group>"; };
 		051272F4232F8D0500DC2EC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05127304232F962A00DC2EC3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		05127305232F962A00DC2EC3 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 		051272D1232F8D0300DC2EC3 /* MobilePhoneBuyer’sGuide */ = {
 			isa = PBXGroup;
 			children = (
+				05127304232F962A00DC2EC3 /* TableViewCell.swift */,
+				05127305232F962A00DC2EC3 /* TableViewCell.xib */,
 				051272D2232F8D0300DC2EC3 /* AppDelegate.swift */,
 				051272D4232F8D0300DC2EC3 /* ViewController.swift */,
 				051272D6232F8D0300DC2EC3 /* Main.storyboard */,
@@ -230,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				051272DD232F8D0400DC2EC3 /* LaunchScreen.storyboard in Resources */,
+				05127307232F962A00DC2EC3 /* TableViewCell.xib in Resources */,
 				051272DA232F8D0400DC2EC3 /* Assets.xcassets in Resources */,
 				051272D8232F8D0300DC2EC3 /* Main.storyboard in Resources */,
 			);
@@ -256,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05127306232F962A00DC2EC3 /* TableViewCell.swift in Sources */,
 				051272D5232F8D0300DC2EC3 /* ViewController.swift in Sources */,
 				051272D3232F8D0300DC2EC3 /* AppDelegate.swift in Sources */,
 			);
