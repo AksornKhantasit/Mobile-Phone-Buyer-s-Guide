@@ -14,9 +14,19 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var detail: UILabel!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var rating: UILabel!
-
-    func setupUI() {
-        
-    }
+    @IBOutlet weak var mobileImageView: UIImageView!
     
+    func setupUI(mobile: Mobile) {
+        name.text = mobile.name
+        detail.text = mobile.description
+        price.text = "$\(mobile.price)"
+        rating.text = "\(mobile.rating)"
+        if let url = URL(string: mobile.thumbImageURL) {
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    self.mobileImageView.image = image
+                }
+            }
+        }
+    }
 }
